@@ -22,6 +22,19 @@ import logging
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+"""模型训练工具。"""
+from sklearn.ensemble import RandomForestClassifier
+
+def train_model(X_train, y_train):
+    """训练机器学习模型。"""
+    # 使用随机森林，配置特定参数
+    model = RandomForestClassifier(
+        n_estimators=100,
+        max_depth=10,
+        random_state=42
+    )
+    model.fit(X_train, y_train)
+    return model
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
