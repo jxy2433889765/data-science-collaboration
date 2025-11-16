@@ -449,3 +449,11 @@ if __name__ == "__main__":
     print("- save_config/load_config: Configuration management")
     print("- log_experiment: Experiment tracking")
     print("- generate_model_report: Model performance reporting")
+    
+def calculate_statistics(data):
+    """计算数据集的基础统计信息。"""
+    return {
+        '均值': data.mean(),
+        '标准差': data.std(),
+        '数据量': len(data)
+    }
