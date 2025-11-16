@@ -21,7 +21,20 @@ from typing import Tuple, Dict, Any, Optional
 import logging
 import matplotlib.pyplot as plt
 import seaborn as sns
+"""模型训练工具。"""
+from sklearn.ensemble import GradientBoostingClassifier
 
+def train_model(X_train, y_train):
+    """训练机器学习模型。"""
+    # 使用梯度提升树，提升性能
+    model = GradientBoostingClassifier(
+        n_estimators=200,
+        learning_rate=0.1,
+        max_depth=5,
+        random_state=42
+    )
+    model.fit(X_train, y_train)
+    return model
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
